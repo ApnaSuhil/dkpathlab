@@ -1,0 +1,318 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Corrected to use box-sizing instead of border */
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.headerbar {
+    width: 100%;
+    height: 100px;
+    background-color: #194569;
+    color: #fff;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: left;
+
+}
+
+.nav-logo {
+    height: 90px;
+    width: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    /* Optional, for some spacing around the logo */
+}
+
+.logo {
+    background-image: url('logo/LogoPathLab.png');
+    background-size: contain;
+    /* Ensures the logo fits within the div */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    background-position: center;
+    /* Centers the image within the div */
+    width: 100%;
+    /* Adjust the width and height as necessary */
+    height: 100%;
+    /* Adjust the width and height as necessary */
+}
+
+
+.logname {
+    padding: 5px;
+}
+
+.logname h1 {
+    font-size: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* -------------------------------------------------
+header is blank right corner space please fill up 
+------------------------------------------------- */
+.box    {
+    padding: 120px;
+}
+
+/* ------------------------------------------------- */
+/* ------------------------------------------------- */
+
+
+.navbar {
+    background-color: #c2dcf1;
+    /* Dark background for the navbar */
+    padding: 8px 0;
+    /* Vertical padding */
+    text-align: center;
+    /* Center the text within the navbar */
+    border-bottom: 2px dotted rgb(0, 0, 104);
+
+}
+
+.navbar ul {
+    list-style: none;
+    /* Remove default list styling */
+    padding: 0;
+    /* Remove default padding */
+    margin: 0;
+    /* Remove default margin */
+    display: flex;
+    /* Use Flexbox for layout */
+    justify-content: center;
+    /* Center the items horizontally */
+}
+
+.navbar li {
+    margin: 0;
+    /* Horizontal spacing between items */
+    position: relative;
+    /* Position relative for absolute positioning of pseudo-elements */
+}
+
+.navbar a {
+    text-decoration: none;
+    /* Remove underline from links */
+    color: #194569;
+    /* White text color */
+    font-size: 16px;
+    /* Font size for the links */
+    padding: 5px 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+    /* Padding around the text */
+    display: block;
+    /* Ensure the links fill their container */
+    transition: color 0.3s, background-color 0.3s;
+    /* Smooth transition for color and background */
+    font-weight: bold;
+    border-left: 2px solid red;
+}
+
+a[data-special="login"] {
+    color: #0001ff;
+    border-right: 2px solid red;
+}
+.navbar a[data-special="login"]:hover {
+    color: red;
+    background-color: #ddd;
+}
+
+.navbar a:hover {
+    color: #fff;
+    /* Change text color on hover */
+    background-color: #194569;
+    /* Change background color on hover */
+    border-radius: 5px;
+    /* Rounded corners for hover effect */
+    /* transform: translateY(-5px); */
+    /* Slight lift effect on hover */
+}
+
+
+/* Optional: Adding an underline animation effect */
+.navbar a::after {
+    content: "";
+    /* Create a pseudo-element */
+    position: absolute;
+    /* Position absolutely within the li */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    /* Underline color */
+    transform: scaleX(0);
+    /* Initial scale for animation effect */
+    transition: transform 0.3s ease;
+    /* Smooth transition for underline */
+}
+
+.navbar a:hover::after {
+    transform: scaleX(1);
+    /* Expand underline on hover */
+}
+
+main {
+    padding: 20px;
+    background: linear-gradient(120deg,  #8de1c7, #b8a7ca, #e7e2af);
+}
+
+.content {
+    padding: 30px 0;
+    padding-top: 10px ;
+    padding-bottom: 40px;
+    animation: slideIn 1.5s ease-out;
+}
+
+.content h2 {
+    color: #194569;
+    font-size: 2em;
+    margin-bottom: 20px;
+    position: relative;
+    animation: fadeInUp 1s ease-in-out;
+    text-align: center;
+}
+
+.img-box{
+    display: flex;
+    float: left;
+    padding: 13px;
+    margin: 12px;
+    border: 2px solid green;
+    
+}
+
+section::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+section p {
+    margin-top: 20px; /* Adds space above the paragraph */
+}
+
+.content ul {
+    padding: 0;
+    list-style: none;
+}
+
+.content ul li {
+    background: #fff;
+    display: flex;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.content ul li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+form {
+    display: grid;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input,
+button {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #194569;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #eec40b;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav ul {
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .content {
+        padding: 20px;
+    }
+    
+    
+}
+
+
+
+footer {
+    background: #194569;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
